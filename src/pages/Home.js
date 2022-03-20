@@ -1,18 +1,16 @@
-import { useEffect, useState } from "react";
 import Table from "../components/Table";
+import useFetch from "../utils/api";
 
 export default function Home() {
-    const [exchanges, setExchanges] = useState([]);
+    const { data, loading, error } = useFetch(
+        "https://api.coingecko.com/api/v3/exchanges?per_page=10"
+    );
 
-    useEffect(() => {
-        fetch("https://api.coingecko.com/api/v3/exchanges?per_page=10")
-            .then((res) => {
-                return res.json();
-            })
-            .then((data) => {
-                setExchanges(data);
-            });
-    }, []);
-
-    return <Table data={exchanges}></Table>;
+    return (
+        <>
+            {loading && <p>{loading}</p>}
+            {error && <p>{error}</p>}
+            {data && <Table data={data}></Table>}
+        </>
+    );
 }

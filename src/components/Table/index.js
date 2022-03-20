@@ -26,6 +26,11 @@ const StyledTable = styled.table`
             text-align: left;
         }
     }
+    tr:last-child {
+        td {
+            border-bottom: 1px solid #dee2e6;
+        }
+    }
 
     thead > tr {
         background-color: rgb(248, 250, 253);
@@ -56,7 +61,7 @@ export default function Table({ data }) {
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>name</th>
+                    <th>Name</th>
                     {titles.map((title, index) => (
                         <th key={index}>{getFormattedTitle(title)}</th>
                     ))}

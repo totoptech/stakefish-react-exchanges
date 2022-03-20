@@ -2,5 +2,6 @@
     "semi": true,
     "tabWidth": 4,
     "printWidth": 85,
-    "trailingComma": "none"
+    "trailingComma": "none",
+    "endOfLine": "auto"
 }

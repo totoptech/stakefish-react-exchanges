@@ -1,11 +1,11 @@
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Exchange from "./pages/Exchange";
 import Home from "./pages/Home";
 import styled from "styled-components";
 
 const Section = styled.div`
     max-width: 900px;
-    margin: 0 auto;
+    margin: 30px auto;
 `;
 
 function App() {
